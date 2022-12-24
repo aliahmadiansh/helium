@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_background_gradient"
+        tools:context="com.partsoftware.helium.feature.authentication.ui.view.AuthenticcationFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo_registrationFrag"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/logoHeight"
+            android:layout_marginBottom="@dimen/prjMargin"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintBottom_toTopOf="@+id/tv_text_registrationFrag"
+            app:layout_constraintDimensionRatio="3.1:1"
+            app:layout_constraintStart_toStartOf="@+id/tv_text_registrationFrag" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_text_registrationFrag"
+            style="@style/MyTextBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/prjMargin"
+            android:text="@string/registration_text"
+            app:layout_constraintBottom_toTopOf="@+id/btn_signup_registrationFrag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signup_registrationFrag"
+            style="@style/MyButtonFill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/prjScreenMargin"
+            android:layout_marginEnd="@dimen/prjScreenMargin"
+            android:layout_marginBottom="@dimen/prjMargin"
+            android:text="@string/sign_up"
+            app:layout_constraintBottom_toTopOf="@id/btn_signin_registrationFrag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signin_registrationFrag"
+            style="@style/MyButtonOutline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/prjScreenMargin"
+            android:layout_marginEnd="@dimen/prjScreenMargin"
+            android:layout_marginBottom="50dp"
+            android:text="@string/sign_in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_background_gradient"
+        tools:context="com.partsoftware.helium.feature.authentication.ui.view.RegisterStatusFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo_registerStatusFrag"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/logoHeight"
+            android:layout_margin="@dimen/prjScreenMargin"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintDimensionRatio="3.1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logoStatus_registerStatusFrag"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="40dp"
+            android:src="@drawable/ic_success"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_textStatus_registerStatusFrag"
+            style="@style/MyTextBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/prjScreenMargin"
+            android:text="@string/signup_success"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logoStatus_registerStatusFrag" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signin_registerStatusFrag"
+            style="@style/MyButtonFill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/prjScreenMargin"
+            android:layout_marginEnd="@dimen/prjScreenMargin"
+            android:layout_marginBottom="50dp"
+            android:text="@string/sign_in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
