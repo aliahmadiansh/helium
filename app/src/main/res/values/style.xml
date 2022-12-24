@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyButtonOutline" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/shape_background_button_outline</item>
+        <item name="background">@drawable/shape_background_button_outline</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Headline6</item>
+        <item name="android:paddingTop">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingBottom">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingStart">@dimen/prjPaddingStartEnd</item>
+        <item name="android:paddingEnd">@dimen/prjPaddingStartEnd</item>
+    </style>
+
+    <style name="MyButtonFill" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/shape_background_button_fill</item>
+        <item name="background">@drawable/shape_background_button_fill</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Headline6</item>
+        <item name="android:paddingTop">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingBottom">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingStart">@dimen/prjPaddingStartEnd</item>
+        <item name="android:paddingEnd">@dimen/prjPaddingStartEnd</item>
+    </style>
+
+    <style name="MyTextHead" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/kalameh_bold</item>
+        <item name="android:fontFamily">@font/kalameh_bold</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Headline4</item>
+        <item name="android:paddingTop">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingBottom">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingStart">@dimen/prjPaddingStartEnd</item>
+        <item name="android:paddingEnd">@dimen/prjPaddingStartEnd</item>
+    </style>
+
+    <style name="MyTextBody" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/yekan_bakh_regular</item>
+        <item name="android:fontFamily">@font/yekan_bakh_regular</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Body1</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingTop">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingBottom">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingStart">@dimen/prjPaddingStartEnd</item>
+        <item name="android:paddingEnd">@dimen/prjPaddingStartEnd</item>
+    </style>
+
+    <style name="MyTextCaption" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/yekan_bakh_regular</item>
+        <item name="android:fontFamily">@font/yekan_bakh_regular</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Subtitle2</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingTop">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingBottom">@dimen/prjPaddingTopBottom</item>
+        <item name="android:paddingStart">@dimen/prjPaddingStartEnd</item>
+        <item name="android:paddingEnd">@dimen/prjPaddingStartEnd</item>
+    </style>
+
+    <style name="MyEditTextLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="hintTextColor">@color/white_dark</item>
+        <item name="startIconTint">@color/white_dark</item>
+        <item name="endIconTint">@color/white_dark</item>
+        <item name="android:textColorHint">@color/white_dark</item>
+        <item name="counterTextColor">@color/white_dark</item>
+        <item name="counterTextAppearance">@style/TextAppearance.MyTheme.Subtitle2</item>
+        <item name="boxStrokeColor">@color/white_light</item>
+        <item name="errorEnabled">true</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Body1</item>
+        <item name="maxLines">1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="MyEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:background">@drawable/shape_background_edit_text</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Body1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="MyBottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/background</item>
+        <item name="enforceTextAppearance">true</item>
+        <item name="enforceMaterialTheme">true</item>
+        <item name="itemIconTint">@color/color_selector_bottom_navigation</item>
+        <item name="itemRippleColor">@color/color_selector_bottom_navigation</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.MyTheme.Body1</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.MyTheme.Body1</item>
+        <item name="itemTextColor">@color/color_selector_bottom_navigation</item>
+    </style>
+
+    <style name="MyFloatingButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">?colorPrimary</item>
+        <item name="tint">@color/white_light</item>
+    </style>
+
+    <style name="MyTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="background">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="rippleColor">@android:color/transparent</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
+        <item name="tabIconTint">@color/tab_layout_icon_color</item>
+        <item name="tabIndicatorHeight">1dp</item>
+        <item name="tabTextColor">@color/white_dark</item>
+        <item name="tabSelectedTextColor">@color/white_light</item>
+        <item name="fontFamily">@font/yekan_bakh_regular</item>
+        <item name="indicatorColor">@color/white_light</item>
+        <item name="tabIndicatorColor">@color/white_light</item>
+    </style>
+
+    <style name="MyChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/gray_light</item>
+        <item name="chipStrokeColor">@color/color_selector_chip</item>
+        <item name="chipStrokeWidth">@dimen/prjStrokeFocus</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Body1</item>
+    </style>
+
+    <style name="MyChipIcon" parent="ShapeAppearanceOverlay.Material3.Chip">
+        <item name="chipBackgroundColor">@color/gray_light</item>
+        <item name="chipStrokeColor">@color/color_selector_chip</item>
+        <item name="chipStrokeWidth">@dimen/prjStrokeFocus</item>
+        <item name="android:textColor">@color/white_light</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Body1</item>
+    </style>
+
+    <style name="MyChipHome" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/gray_light</item>
+        <item name="android:checked">false</item>
+        <item name="android:textColor">?colorSecondary</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:clickable">false</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Body2</item>
+    </style>
+
+    <style name="MyChipHomeChecked" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/gray_light</item>
+        <item name="android:checked">true</item>
+        <item name="chipStrokeColor">?colorPrimary</item>
+        <item name="chipStrokeWidth">@dimen/prjStrokeFocus</item>
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Body2</item>
+    </style>
+
+
+    <style name="MyCircularProgress" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">?colorPrimary</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="MyImageShapeCircle">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="MyImageShapeRadius">
+        <item name="cornerSize">16dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+</resources>

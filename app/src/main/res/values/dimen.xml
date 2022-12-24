@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="prjMargin">24dp</dimen>
+    <dimen name="prjMarginHalf">6dp</dimen>
+    <dimen name="prjScreenMargin">16dp</dimen>
+    <dimen name="prjPaddingTopBottom">8dp</dimen>
+    <dimen name="prjPaddingStartEnd">16dp</dimen>
+    <dimen name="prjRadius">8dp</dimen>
+    <dimen name="prjStroke">1dp</dimen>
+    <dimen name="prjStrokeFocus">2dp</dimen>
+    <dimen name="prjElevation">6dp</dimen>
+    <dimen name="prjMargin_36">36dp</dimen>
+    <dimen name="logoHeight">56dp</dimen>
+    <dimen name="iconSize">48dp</dimen>
+    <dimen name="iconPadding">12dp</dimen>
+
+</resources>
