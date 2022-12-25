@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileViewModel"
+            type="com.article.feature.profile.ui.viewmodel.ProfileViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context="com.partsoftware.helium.feature.profile.ui.view.ProfileFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_avatar_profileFragment"
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="@dimen/iconSize"
+            android:layout_margin="@dimen/prjScreenMargin"
+            android:padding="@dimen/iconPadding"
+            android:src="@drawable/ic_profile_circular"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white_light" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_username_profileFragment"
+            style="@style/MyTextBody"
+            android:text="@{profileViewModel.fullName}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar_profileFragment"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu_profileFragment"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar_profileFragment"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar_profileFragment"
+            tools:text="@string/username_example" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_menu_profileFragment"
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="@dimen/iconSize"
+            android:layout_margin="@dimen/prjScreenMargin"
+            android:padding="@dimen/iconPadding"
+            android:src="@drawable/ic_baseline_menu_24"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white_light" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout_profileFragment"
+            style="@style/MyTabLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu_profileFragment"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager_profileFrag"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/prjScreenMargin"
+            android:layout_marginEnd="@dimen/prjScreenMargin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout_profileFragment" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:id="@+id/rv_profileFragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu_profileFragment" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

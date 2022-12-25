@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.label == "com.article.feature.article.ui.view.HomeFragment"
                 || destination.label == "SearchFragment"
-                || destination.label == "ProfileFragment"
+                || destination.label == "com.article.feature.profile.ui.view.ProfileFragment"
             ) {
                 binding.bottomNavigation.visibility = View.VISIBLE
                 binding.root.setBackgroundColor(
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         val destination = navController.currentDestination?.label
-        if (destination == "SearchFragment" || destination == "ProfileFragment"
+        if (destination == "SearchFragment" || destination == "com.article.feature.profile.ui.view.ProfileFragment"
         ) {
             navController.navigate(R.id.homeFragment)
         } else if (destination == "com.article.feature.article.ui.view.HomeFragment") {
