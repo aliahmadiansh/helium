@@ -1,0 +1,148 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="publishArticleViewModel"
+            type="com.article.feature.article.ui.viewmodel.PublishArticleViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:scrollbarSize="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_close_publishFragment"
+                android:layout_width="@dimen/iconSize"
+                android:layout_height="@dimen/iconSize"
+                android:layout_margin="@dimen/prjScreenMargin"
+                android:padding="@dimen/iconPadding"
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/iv_back_articleDetailFragment"
+                style="@style/MyTextHead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/prjScreenMargin"
+                android:gravity="center"
+                android:text="@string/publish_new_article"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_close_publishFragment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_close_publishFragment" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_publish_article"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/prjScreenMargin"
+                android:layout_marginTop="@dimen/prjMarginHalf"
+                android:layout_marginEnd="@dimen/prjScreenMargin"
+                android:padding="@dimen/prjMargin"
+                android:src="@drawable/ic_picture"
+                app:layout_constraintDimensionRatio="1.3:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_close_publishFragment"
+                app:shapeAppearanceOverlay="@style/MyImageShapeRadius" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_add_tag_publishArticleFragment"
+                style="@style/MyChipIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/prjScreenMargin"
+                android:text="@string/add_tag"
+                app:chipIcon="@drawable/ic_add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_publish_article" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_selected_publishArticleFragment"
+                style="@style/MyChip"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/prjScreenMargin"
+                app:layout_constraintStart_toEndOf="@id/chip_add_tag_publishArticleFragment"
+                app:layout_constraintTop_toBottomOf="@+id/iv_publish_article" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_title_publishArticleFragment"
+                style="@style/MyTextHead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/prjScreenMargin"
+                android:layout_marginTop="@dimen/prjMarginHalf"
+                android:layout_marginEnd="@dimen/prjScreenMargin"
+                android:background="@android:color/transparent"
+                android:hint="@string/article_title"
+                android:text="@={publishArticleViewModel.articleTitle}"
+                android:textAlignment="viewStart"
+                android:textColorHint="@color/white_dark"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chip_add_tag_publishArticleFragment" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_text_publishArticleFragment"
+                style="@style/MyTextBody"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/prjScreenMargin"
+                android:layout_marginTop="@dimen/prjMarginHalf"
+                android:layout_marginEnd="@dimen/prjScreenMargin"
+                android:layout_marginBottom="50dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/article_text"
+                android:inputType="textMultiLine"
+                android:maxLines="14"
+                android:minLines="8"
+                android:text="@={publishArticleViewModel.articleContent}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Subtitle2"
+                android:textColor="@color/white_light"
+                android:textColorHint="@color/white_dark"
+                app:layout_constraintBottom_toTopOf="@+id/btn_publish_publishArticleFragment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_title_publishArticleFragment"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="RtlCompat" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_publish_publishArticleFragment"
+                style="@style/MyButtonFill"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/prjScreenMargin"
+                android:layout_marginEnd="@dimen/prjScreenMargin"
+                android:text="@string/publish_new_article"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_text_publishArticleFragment" />
+
+            <ProgressBar
+                android:id="@+id/progress_publishArticleFragment"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_publish_publishArticleFragment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_publish_publishArticleFragment" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

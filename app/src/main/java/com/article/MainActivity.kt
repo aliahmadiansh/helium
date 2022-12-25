@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.fragmentContainerView)
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.label == "HomeFragment"
+            if (destination.label == "com.article.feature.article.ui.view.HomeFragment"
                 || destination.label == "SearchFragment"
                 || destination.label == "ProfileFragment"
             ) {
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         if (destination == "SearchFragment" || destination == "ProfileFragment"
         ) {
             navController.navigate(R.id.homeFragment)
-        } else if (destination == "HomeFragment") {
+        } else if (destination == "com.article.feature.article.ui.view.HomeFragment") {
             if (currentTime + 1000 > System.currentTimeMillis()) {
                 finishAffinity()
             } else {

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sampleArticle"
+            type="com.article.core.ui.model.ItemArticleView" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_item_home_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_tag_recyclerSample"
+            style="@style/MyChipHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@{sampleArticle.tag}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/tags" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_titleText_recyclerSample"
+            style="@style/MyTextBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:minLines="4"
+            android:text="@{sampleArticle.title}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_subText_recyclerSample"
+            app:layout_constraintEnd_toStartOf="@+id/iv_image_recyclerSample"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chip_tag_recyclerSample"
+            tools:ignore="RtlCompat"
+            tools:text="@string/article_title" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_image_recyclerSample"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            setImageView="@{sampleArticle.imageUrl}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_titleText_recyclerSample"
+            app:layout_constraintDimensionRatio="1.3:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_titleText_recyclerSample"
+            app:shapeAppearanceOverlay="@style/MyImageShapeRadius"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_subText_recyclerSample"
+            style="@style/MyTextCaption"
+            dateModify="@{sampleArticle.createdAt}"
+            firstName="@{sampleArticle.authorFirstName}"
+            lastName="@{sampleArticle.authorLastName}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/prjMarginHalf"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:minLines="1"
+            android:textColor="@color/white_dark"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/article_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

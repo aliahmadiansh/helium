@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detailArticleViewModel"
+            type="com.article.feature.article.ui.viewmodel.DetailArticleViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:scrollbarSize="0dp"
+            tools:ignore="UselessParent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_bookmark_articleDetailFragment"
+                    setBookmarked="@{detailArticleViewModel.bookmarkState}"
+                    android:layout_width="@dimen/iconSize"
+                    android:layout_height="@dimen/iconSize"
+                    android:layout_margin="@dimen/prjScreenMargin"
+                    android:onClick="@{() -> detailArticleViewModel.setStateBookmark()}"
+                    android:padding="@dimen/iconPadding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_bookmark" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_back_articleDetailFragment"
+                    android:layout_width="@dimen/iconSize"
+                    android:layout_height="@dimen/iconSize"
+                    android:layout_margin="@dimen/prjScreenMargin"
+                    android:rotation="180"
+                    android:src="@drawable/ic_arrow_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_image_articleDetailFragment"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/prjScreenMargin"
+                    android:layout_marginTop="@dimen/prjMarginHalf"
+                    android:layout_marginEnd="@dimen/prjScreenMargin"
+                    android:scaleType="centerCrop"
+                    setImageView="@{detailArticleViewModel.detailArticle.imageURL}"
+                    app:layout_constraintDimensionRatio="1.3:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_back_articleDetailFragment"
+                    app:shapeAppearanceOverlay="@style/MyImageShapeRadius"
+                    tools:src="@tools:sample/avatars" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_writer_articleDetailFragment"
+                    style="@style/MyTextBody"
+                    userFirstName="@{detailArticleViewModel.detailArticle.authorFirstName}"
+                    userLastName="@{detailArticleViewModel.detailArticle.authorLastName}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/prjMarginHalf"
+                    android:maxLength="30"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_gray_light"
+                    app:layout_constraintBottom_toBottomOf="@+id/chip_type_articleDetailFragment"
+                    app:layout_constraintStart_toStartOf="@id/iv_image_articleDetailFragment"
+                    app:layout_constraintTop_toTopOf="@+id/chip_type_articleDetailFragment"
+                    tools:text="@string/username_example" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_readTime_articleDetailFragment"
+                    style="@style/MyTextCaption"
+                    readTime="@{detailArticleViewModel.detailArticle.readTimeMinutes}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:textColor="@color/text_gray_light"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_writer_articleDetailFragment"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_writer_articleDetailFragment"
+                    tools:text="مطالعه 1 دقیقه" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_type_articleDetailFragment"
+                    style="@style/MyChipHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/prjMarginHalf"
+                    android:maxLength="20"
+                    android:ellipsize="end"
+                    chipText="@{detailArticleViewModel.detailArticle.tagName}"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_image_articleDetailFragment"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_image_articleDetailFragment"
+                    tools:text="@string/chip_title_example" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title_articleDetailFragment"
+                    style="@style/MyTextHead"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/prjScreenMargin"
+                    android:layout_marginTop="@dimen/prjMarginHalf"
+                    android:layout_marginEnd="@dimen/prjScreenMargin"
+                    android:text="@{detailArticleViewModel.detailArticle.title}"
+                    android:textAlignment="viewStart"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_readTime_articleDetailFragment"
+                    tools:text="@string/lorem_title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_text_articleDetailFragment"
+                    style="@style/MyTextBody"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/prjScreenMargin"
+                    android:paddingBottom="50dp"
+                    android:text="@{detailArticleViewModel.detailArticle.content}"
+                    android:textAlignment="gravity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_articleDetailFragment"
+                    tools:text="@string/lorem" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_circular_articleDetailFragment"
+            style="@style/MyCircularProgress"
+            setProgressShow="@{detailArticleViewModel.progressShow}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>
