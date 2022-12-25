@@ -1,4 +1,4 @@
-package com.partsoftware.helium.core.ui.model
+package com.article.core.ui.model
 
 data class ItemUserView(
     val id: Int,

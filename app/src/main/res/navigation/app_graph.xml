@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    android:label="MainGraph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.article.feature.article.ui.view.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailArticleFragment"
+            app:destination="@id/detailArticleFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_publishArticleFragment"
+            app:destination="@id/publishArticleFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.article.feature.search.ui.view.SearchFragment"
+        tools:layout="@layout/fragment_search"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailArticleFragment"
+            app:destination="@id/detailArticleFragment"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/publishArticleFragment"
+        android:name="com.article.feature.article.ui.view.PublishArticleFragment"
+        tools:layout="@layout/fragment_publish_article"
+        android:label="PublishArticleFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.article.feature.profile.ui.view.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="ProfileFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_profileFragment_to_detailArticleFragment"
+            app:destination="@id/detailArticleFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailArticleFragment"
+        android:name="com.article.feature.profile.ui.view.ProfileFragment"
+        tools:layout="@layout/fragment_article_detail"
+        android:label="DetailArticleFragment">
+        <argument
+            android:name="articleID"
+            app:argType="integer" />
+    </fragment>
+</navigation>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="sampleTag"
+            type="com.article.core.ui.model.ItemTagView" />
+    </data>
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_item_search_tags"
+        style="@style/MyChip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/prjMarginHalf"
+        android:gravity="center"
+        android:text="@{sampleTag.name}" />
+</layout>

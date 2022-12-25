@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchViewModel"
+            type="com.article.feature.search.ui.viewmodel.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".feature.search.ui.view.SearchFragment">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_search_searchFragment"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/prjScreenMargin"
+            android:background="@drawable/shape_background_edit_text"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/iconPadding"
+            android:drawableTint="@color/white_dark"
+            android:hint="@string/searchbar"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:padding="@dimen/prjPaddingStartEnd"
+            android:text="@={searchViewModel.searchText}"
+            android:textColor="@color/white_light"
+            android:textColorHint="@color/white_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_search" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_tag_searchFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/prjScreenMargin"
+            android:layout_marginTop="@dimen/prjMarginHalf"
+            app:checkedChip="@id/chip_post_searchFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search_searchFragment"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_post_searchFragment"
+                style="@style/MyChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> searchViewModel.changeSearchState(searchViewModel.SearchState.POST)}"
+                android:text="@string/posts" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_tags_searchFragment"
+                style="@style/MyChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> searchViewModel.changeSearchState(searchViewModel.SearchState.TAG)}"
+                android:text="@string/tags" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_users_searchFragment"
+                style="@style/MyChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> searchViewModel.changeSearchState(searchViewModel.SearchState.USER)}"
+                android:text="@string/users" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager_searchFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/prjScreenMargin"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_tag_searchFragment" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_circular_homeFragment"
+            style="@style/MyCircularProgress"
+            setProgressShow="@{searchViewModel.progressShow}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/prjMargin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/viewPager_searchFragment"
+            app:layout_constraintStart_toStartOf="@id/viewPager_searchFragment"
+            app:layout_constraintTop_toTopOf="@id/viewPager_searchFragment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

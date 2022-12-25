@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.label == "com.article.feature.article.ui.view.HomeFragment"
-                || destination.label == "SearchFragment"
+                || destination.label == "com.article.feature.search.ui.view.SearchFragment"
                 || destination.label == "com.article.feature.profile.ui.view.ProfileFragment"
             ) {
                 binding.bottomNavigation.visibility = View.VISIBLE
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         val destination = navController.currentDestination?.label
-        if (destination == "SearchFragment" || destination == "com.article.feature.profile.ui.view.ProfileFragment"
+        if (destination == "com.article.feature.search.ui.view.SearchFragment" || destination == "com.article.feature.profile.ui.view.ProfileFragment"
         ) {
             navController.navigate(R.id.homeFragment)
         } else if (destination == "com.article.feature.article.ui.view.HomeFragment") {
